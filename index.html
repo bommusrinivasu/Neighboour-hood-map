@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Great india's kitchen</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/style.css">
+   </head>
+   <body>
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col-md-3">
+               <div class="row header">
+                  <div class="col-md-12">
+                        <h1>Favourite restaurants</h1>
+                        <form>
+                           <div class="form-group">
+                              <label for="searchbar">Filter restaurants by name</label>
+                              <input type="text" name="searchbar" id="searchbar" class="form-control" data-bind="value: searchText, valueUpdate: 'afterkeydown', event: {keyup: filterList}" placeholder="Name of restaurant">
+                           </div>
+                        </form>
+                     </header>
+                  </div>
+               </div>
+               <div>
+                  <ul data-bind="foreach: Array" class="main-nav">
+                     <li class="main-nav-item col-md-12 col-sm-6" data-bind="css: {active: selected},text: title, click: $parent.setSelected, visible:show"></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col-md-8">
+               <div class="row">
+                  <div class="column" id="map"></div>
+                  <div id="error-message">
+                     <h4 data-bind="text: errorDisplay"></h4>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      </script>
+      <script src="js/locations.js"></script>
+      <script src="js/style.js"></script>
+      <script src="js/jquery.min.js"></script>
+      <script src="js/knockout.js"></script>
+      <script src="js/app.js"></script>
+      <script>
+          
+         var map, infoWindow;
+         
+         function initMap() {
+             map = new google.maps.Map(
+                 document.getElementById('map'), {
+                     center: {
+                         lat: 28.6315,
+                         lng: 77.2167
+                     },
+                     zoom: 5,
+                     mapTypeControl:true
+                 }
+                 
+             );
+         // Create a styles array to use with the map.
+         var styles = [
+          {
+            featureType: 'water',
+            stylers: [
+              { color:'blue' }
+            ]
+          }]
+          
+             infowindow = new google.maps.InfoWindow();
+         
+             ko.applyBindings(new model());
+         }
+         
+         function mapError() {
+             document.getElementById('map-error').innerHTML = "Error in loading Map!";
+         }
+      </script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwW0-DwwwI5DwgNJPpn9e5Sr16WeTF5cU&callback=initMap" onerror="mapError()" async defer></script>
+   </body>
+</html>

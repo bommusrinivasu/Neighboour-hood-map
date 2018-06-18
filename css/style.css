@@ -1,0 +1,53 @@
+body {
+    background-image:url("https://bit.ly/2JT1r2e");
+    color:rgb(226, 41, 220);
+}
+#error-message{
+    background-color: aqua;
+}
+
+h1 {
+     font-size:30px;
+     font-family:italic;
+}
+row header{
+    background-color: bisque;
+}
+
+h5 {
+    font-family:oblique;
+    font-size:22px;
+}
+
+#searchbar {
+       width:260px;
+       max-height:500px;
+       border:solid 5px yellow;
+       overflow:hidden;
+       font-style:italic;
+}
+
+.main-nav {
+         background-color:brown;
+         text-align:left;
+         font-size:26px;
+}
+
+li {
+         cursor:pointer;
+         color:wheat;
+         margin:.5em 0;
+         font-style:italic;
+
+}
+
+li:hover {
+      color:red;
+}
+
+#map {
+       width:100%;
+       height:100vh;
+       top:0;
+       bottom:0;
+}

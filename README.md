@@ -1,4 +1,4 @@
-# Udacity Neighborhood Map Project
+# Neighborhood Map Project
 
 This project is for Udacity Full stack web Developer course. 
 
@@ -19,6 +19,6 @@ This app use Google Maps API key and foursquare api key. I provided mine in the 
 
 ## Library Use
 
-- [Twitter Bootstrap](http://getbootstrap.com/)
+- [ Bootstrap](http://getbootstrap.com/)
 - [Knockout JS](http://knockoutjs.com/)
 
